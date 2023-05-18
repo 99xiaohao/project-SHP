@@ -70,9 +70,14 @@ export default {
       //2:如何指定params参数可传可不传？
       //如果路由要求传递params参数，但是你不传params参数，URL会有问题
       //如何只当params参数可以传递或者不传递，在配置路由的时候，在占位的后面加上一个问号
-      this.$router.push({name:'search',query:{k:this.keyword.toUpperCase()}})
-
-
+      //this.$router.push({name:'search',query:{k:this.keyword.toUpperCase()}})
+      //面试体3：params参数可以传递也可以不传递，但是如果传递是空串，如何解决
+      //使用undefind解决：params参数可以传递、不传递（空的字符串）
+      //this.$router.push({name:'search',params:{keyword:''||undefined},query:{k:this.keyword.toUpperCase()}})
+      
+      //路由组件能不能传递props数据
+      //有三种写法
+      this.$router.push({name:'search',params:{keyword:this.keyword},query:{k:this.keyword.toUpperCase()}})
 
     }
 

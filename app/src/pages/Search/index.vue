@@ -1,16 +1,16 @@
 <template>
   <div>
     <h1>params参数----{{ $route.params.keyword }}</h1>
-    <h1>params---{{ $route.query }}</h1>
+    <h1>query参数---{{ $route.query}}</h1>
   </div>
 </template>
 
 <script>
 export default {
-
-}
+  name: "",
+  props: ["keyword", "a", "b"],
+};
 </script>
 
 <style>
-
 </style>
