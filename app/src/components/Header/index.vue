@@ -59,7 +59,21 @@ export default {
   methods:{
     //搜索按钮的回调函数，需要向search路由进行跳转
     goSearch(){
-      this.$router.push("/search/"+ this.keyword+"?k="+this.keyword.toUpperCase())
+      //路由传递参数
+      //第一种：参数传参
+      //this.$router.push("/search/"+ this.keyword+"?k="+this.keyword.toUpperCase())
+      //第二种模板字符串
+      //.$router.push(`/search/${this.keyword}?k=${this.keyword.toUpperCase()}`)
+      //第三种，对象写法 可以是name、path形式，但是需要注意的是，path这种写法不能于params参数一起出现
+      //this.$router.push({name:'search',params:{keyword:this.keyword},query:{k:this.keyword.toUpperCase()}})
+      
+      //2:如何指定params参数可传可不传？
+      //如果路由要求传递params参数，但是你不传params参数，URL会有问题
+      //如何只当params参数可以传递或者不传递，在配置路由的时候，在占位的后面加上一个问号
+      this.$router.push({name:'search',query:{k:this.keyword.toUpperCase()}})
+
+
+
     }
 
   }
