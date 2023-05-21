@@ -81,6 +81,9 @@ export default {
       //路由组件能不能传递props数据
       //有三种写法
       //this.$router.push({name:'search',params:{keyword:this.keyword},query:{k:this.keyword.toUpperCase()}})
+      
+      
+      //不会报重复搜索的错误但是会输出undefined  
       this.$router.push({name:'search',query:{k:this.keyword.toUpperCase()}},()=>{},()=>{}) 
 
 
